@@ -30,23 +30,10 @@ const AuthTokenSchema = new mongoose.Schema({
   },
 });
 
-const TestSchema = new mongoose.Schema({
-  id: {
-    type: Number,
-    default: 1,
-  },
-
-  loggedClient: {
-    type: Object,
-  },
-});
-
 const Auth = mongoose.model("Auth", AuthSchema);
 const AuthToken = mongoose.model("Auth Token", AuthTokenSchema);
-const Test = mongoose.model("test schema", TestSchema);
 
 module.exports = {
   Auth,
   AuthToken,
-  Test,
 };

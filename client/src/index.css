@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.15rem;
+  line-height: 2.5rem;
+}
+
+.quote-container {
+  position: relative;
+  width: 1100px;
+  height: 575px;
+  font-family: "Kalam", cursive;
+}
+
+.image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: auto;
+  z-index: 0;
+  filter: brightness(40%) grayscale(10%);
+}
+
+.quote {
+  position: absolute;
+  width: 70%;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  top: 48.5%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+
+  font-size: 4rem;
+  line-height: 5rem;
+  font-weight: 400;
+}
+
+.author {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
