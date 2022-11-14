@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 
 const Quote = ({ quote, setQuote }) => {
-  const getQuote = async () => {
+  const getQuote = useCallback(async () => {
     try {
       const res = await fetch("http://localhost:3000/api");
       const fin = await res.json();
@@ -9,11 +9,11 @@ const Quote = ({ quote, setQuote }) => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [setQuote]);
 
   useEffect(() => {
     getQuote();
-  }, []);
+  }, [getQuote]);
 
   if (Object.keys(quote).length === 0) {
     return <div className="quote">Loading...</div>;
