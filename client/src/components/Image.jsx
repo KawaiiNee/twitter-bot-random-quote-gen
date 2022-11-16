@@ -1,35 +1,28 @@
-import React, { useEffect } from "react";
-import domtoimage from "dom-to-image";
+import React, { useEffect, useCallback } from "react";
 import { createApi } from "unsplash-js";
 
-const Image = ({ image, setImage }) => {
-  const handleClick = () => {
-    const node = document.getElementById("quote-container");
-
-    domtoimage.toJpeg(node).then(function (dataUrl) {
-      var link = document.createElement("a");
-      link.download = "random-quote.jpeg";
-      link.href = dataUrl;
-      // link.click();
-    });
-  };
-
+const Image = ({ image, setImage, doTweet }) => {
   const api = createApi({
     accessKey: import.meta.env.VITE_ACCESS_KEY,
   });
 
-  const getImage = async () => {
-    const res = await api.photos.getRandom({
-      orientation: "landscape",
-      count: 1,
-    });
+  const getImage = useCallback(async () => {
+    try {
+      const res = await api.photos.getRandom({
+        orientation: "landscape",
+        count: 1,
+      });
 
-    setImage(res);
-  };
+      setImage(res);
+    } catch (error) {
+      console.error(error);
+    }
+    // FIXME: setting the api.photos as a dependency generate an infinite loop
+  }, [setImage]);
 
   useEffect(() => {
-    getImage();
-  }, []);
+    if (!doTweet) getImage();
+  }, [getImage, doTweet]);
 
   if (!image) {
     return <div>Loading...</div>;

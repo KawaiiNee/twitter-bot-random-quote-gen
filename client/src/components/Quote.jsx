@@ -1,19 +1,21 @@
 import React, { useEffect, useCallback } from "react";
+import axios from "axios";
 
-const Quote = ({ quote, setQuote }) => {
+const Quote = ({ quote, setQuote, doTweet }) => {
   const getQuote = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:3000/api");
-      const fin = await res.json();
-      setQuote(fin);
+      const { data } = await axios.get("http://localhost:3000/api");
+      setQuote(data);
     } catch (error) {
       console.error(error);
     }
   }, [setQuote]);
 
   useEffect(() => {
-    getQuote();
-  }, [getQuote]);
+    if (!doTweet) {
+      getQuote();
+    }
+  }, [getQuote, doTweet]);
 
   if (Object.keys(quote).length === 0) {
     return <div className="quote">Loading...</div>;
