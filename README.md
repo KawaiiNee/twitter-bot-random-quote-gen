@@ -1,6 +1,6 @@
 <div align="center">
 <h1>Twitter bot</h1>
-<p>Automatically generate and tweet random quotes and a background image for you</p>
+<p>Automatically generate and tweet random quotes with a background image for you</p>
 </div>
 
 ## Usage
