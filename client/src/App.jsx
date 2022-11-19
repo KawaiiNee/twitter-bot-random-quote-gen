@@ -8,6 +8,7 @@ import "./index.css";
 import Quote from "./components/Quote";
 import Image from "./components/Image";
 
+// tweet every 20 minutes upon running
 const rule = new schedule.RecurrenceRule();
 rule.minute = [0, new schedule.Range(0, 60, 20)];
 
