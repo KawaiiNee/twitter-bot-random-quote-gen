@@ -104,9 +104,9 @@ router.post("/tweet", async (req, res) => {
       media_ids: mediaId,
     });
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, newTweet });
   } catch (error) {
-    // console.error(error);
+    console.error(error);
     res.status(500).send(error);
   }
 });
