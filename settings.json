@@ -1,0 +1,75 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "path": ["C:\\Program Files\\Git\\bin\\bash.exe"],
+      "icon": "terminal-bash"
+    }
+  },
+
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  "editor.fontSize": 15,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.suggest.showWords": false,
+  "json.schemas": [],
+  "prettier.tabWidth": 2,
+  // removes emmet suggestions like literal log or error in the console object
+  "editor.snippetSuggestions": "top",
+  "todohighlight.isEnable": true,
+  "explorer.confirmDragAndDrop": false,
+  "editor.guides.bracketPairs": true,
+  "editor.formatOnPaste": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "css.format.preserveNewLines": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "files.associations": {
+    "*.module": "php"
+  },
+  "php.validate.executablePath": "C:\\Program Files\\php\\php.exe",
+  "php.validate.enable": false,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Shades of Purple (Super Dark)",
+
+   "todohighlight.keywords": [
+        {
+            "text": "TODO:",
+            "backgroundColor": "#0d6efd",
+        },
+        {
+          "text": "FIXME:",
+          "backgroundColor": "#dc3545",
+        }
+    ],
+    "editor.minimap.enabled": false,
+}
